@@ -1,0 +1,36 @@
+{% load templatetags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML TRYING</title>
+</head>
+<body>
+    {% block header %}
+    <div class="header" style="text-align:center;background-color:green;padding:10px;margin:5px;">
+    This is a header
+    </div>
+    {% endblock %}
+    {% block content %}
+    <div class="content" style="text-align:center;background-color:red;padding:10px;margin:5px;">
+    This is content 1
+    </div>
+    {% endblock %}
+    {% block footer %}
+    <div class="footer" style="text-align:center;background-color:yellow;padding:10px;margin:5px;">
+    This is a footer
+    </div>
+    {% endblock %}
+    {% comment %} {% if show > 1 %}
+        Something to show
+    {% elif %}
+        something not to show
+    {% else %}
+        esle :/
+    {% endif %} {% endcomment %}
+    {{ Emperor|safe }}
+    {{ "123"|create_tooman }}
+</body>
+</html>

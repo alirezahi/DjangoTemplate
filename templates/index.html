@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+</head>
+<body>
+    <div>
+    {% for item in You_Know %}
+     <div style="background-color:red;">
+        {{ item }}
+     </div>
+    {% endfor %}
+    </div>
+    {{ You_Know.c }}
+    <form>
+    {% csrf_token %}
+    </form>
+    <ul>
+    {% for human in new_iteration%}
+        <li>
+        {{ forloop.counter|linebreaks }} - {{ human.name }} {{ human.family_name}}
+        {% if forloop.first %}
+            - pioneer
+        {% endif %}
+        {% if forloop.last %}
+            - loser
+        {% endif %}
+        </li>
+    {% endfor %}
+    </ul>
+
+    <a href="{{ link }}">click on it</a>
+</body>
+</html>
